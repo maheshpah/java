@@ -1,4 +1,4 @@
-package basic.super_Reference_Variable;
+package basic.keyword.super_Reference_Variable;
 
 public class A {
     int x = 5;             // Instance variable
