@@ -1,29 +1,25 @@
 package basic.interfacee;
 
-public class Demo implements Basic {
+// Demo class implementing multiple interfaces: Basic and Basic2
+public class Demo implements Basic, Basic2 {
 
-    // Implementing the abstract method from the interface
     @Override
     public void m1() {
         System.out.println("Method m1() is implemented in Demo class.");
     }
 
-    // Overriding the default method from the interface (optional)
     @Override
-    public void display() {
-        System.out.println("Overridden default method: VALUE = " + VALUE);
+    public void m3() {
+        System.out.println("Method m3() is implemented in Demo class.");
     }
 
     public static void main(String[] args) {
         Demo obj = new Demo();
 
-        // Calling the implemented abstract method
-        obj.m1();
+        obj.m1();              // Calls m1() from Basic
+        obj.display();         // Inherited default method from Basic
+        obj.m3();              // Calls m3() from Basic2
 
-        // Calling the overridden default method
-        obj.display();
-
-        // Calling the static method of the interface (cannot be overridden)
-        Basic.staticMethod();
+        Basic.staticMethod();  // Calls static method from Basic interface
     }
 }
